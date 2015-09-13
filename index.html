@@ -1,0 +1,252 @@
+<!doctype html>
+<html class="no-js" lang="en" ng-app="portApp">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hamzeen. H.</title>
+      <!-- Fonts //-->
+      <link rel='stylesheet' id='heading_font-css'  href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed%3A300&#038;ver=3.5' type='text/css' media='all' />
+      <link rel='stylesheet' id='body_font-css'  href='http://fonts.googleapis.com/css?family=Titillium+Web%3Aregular&#038;ver=3.5' type='text/css' media='all' />
+      <link rel="stylesheet" href="http://use.edgefonts.net/c/5af265/open-sans-condensed:i3:n3:n7.Wky:J:2,Wkx:J:2,Wkw:J:2/d">
+      <link href='http://fonts.googleapis.com/css?family=Gafata' rel='stylesheet' type='text/css' />
+
+      <link rel="stylesheet" href="css/foundation.css" />
+      <link rel="stylesheet" href="css/animate.min.css" />
+      <link rel="stylesheet" href="css/framework.css" />
+      <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+      <script type="text/javascript" src="js/jquery.feeds.js"></script>
+      <script src="js/modernizr.js"></script>
+
+      <!-- For uncoupling data from the UI using JS Objects//-->
+      <script src="js/angular.min.js"></script>
+      <script src="js/angular-sanitize.min.js"></script>
+      <script src="model.js"></script>
+
+      <script type="text/javascript">
+          $(document).ready(function(){
+
+              var bgobj = $('body'); // assigning the object
+              var doc = $(document);
+              var mask = $("#diamond");
+              $(window).scroll(function() {
+                  //if(doc.scrollTop()>260){
+                      mask.css("right",-330 - ((500/doc.height()) * doc.scrollTop()));
+                  //}
+                  var yMove = 50 + ((80/doc.height()) * doc.scrollTop());
+                  var coords = '50% '+ yMove + '%';
+                  bgobj.css({ backgroundPosition: coords });
+              }); // window scroll Ends
+          });
+      </script>
+  </head>
+  <body  data-speed="40" data-type="background" ng-controller="dataController">
+    <div style="display:none" class="fixed">
+    <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1>
+          <a href="#">
+            <img src="img/tri-small.png"> Hamzeen. H.
+          </a>
+        </h1>
+      </li>
+      <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
+    </ul>
+
+    <section style="display:none" class="top-bar-section">
+      <ul class="right">
+        <li class="divider"></li>
+        <li class="has-dropdown">
+          <a href="#">Main Item 1</a>
+          <ul class="dropdown">
+            <li><label>Section Name</label></li>
+            <li class="has-dropdown">
+              <a href="#" class="">Has Dropdown, Level 1</a>
+              <ul class="dropdown">
+                <li><a href="#">Dropdown Options</a></li>
+                <li><a href="#">Dropdown Options</a></li>
+                <li><a href="#">Level 2</a></li>
+                <li><a href="#">Subdropdown Option</a></li>
+                <li><a href="#">Subdropdown Option</a></li>
+                <li><a href="#">Subdropdown Option</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Dropdown Option</a></li>
+            <li><a href="#">Dropdown Option</a></li>
+            <li class="divider"></li>
+            <li><label>Section Name</label></li>
+            <li><a href="#">Dropdown Option</a></li>
+            <li><a href="#">Dropdown Option</a></li>
+            <li><a href="#">Dropdown Option</a></li>
+            <li class="divider"></li>
+            <li><a href="#">See all &rarr;</a></li>
+          </ul>
+        </li>
+        <li class="divider"></li>
+        <li><a href="#">Main Item 2</a></li>
+        <li class="divider"></li>
+        <li class="has-dropdown">
+          <a href="#">Main Item 3</a>
+          <ul class="dropdown">
+            <li><a href="#">Dropdown Option</a></li>
+            <li><a href="#">Dropdown Option</a></li>
+            <li><a href="#">Dropdown Option</a></li>
+            <li class="divider"></li>
+            <li><a href="#">See all &rarr;</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+  </nav>
+</div>
+
+    <div id="shapes">
+        <!--<div class="logo shape"></div>//-->
+        <div class="mask1 shape"></div>
+
+
+        <!--<div id="mask3" class="mask3"><h1 style="color: #333333;">About</h1></div>//-->
+    </div>
+    <div style="top:415px;position:absolute;height:400px;width: 100%;overflow: hidden;">
+    <div id="diamond"></div>
+    </div>
+    <!--<div id="socials">//-->
+        <div id="socribbon">
+
+            <a href="http://www.flickr.com/hamzeen" title="Flickr">
+                <div id="flickr"><p>f</div>
+            </a>
+
+            <a href="https://twitter.com/hamzeen" title="Twitter">
+                <div id="twitter"><p>t</div>
+            </a>
+
+            <a href="http://www.vimeo.com/hamzeen" title="Vimeo">
+                <div id="vimeo"><p>v</div>
+            </a>
+        </div>
+
+
+    </div>
+
+
+    <!-- intro //-->
+    <section id="home">
+    <div style="float:left;width:100%;" id="decription">
+        <div class="section" id="welcome">
+		<article>
+
+            <h3><span style="text-shadow: 0 0 0.2em rgba(13, 22, 0, 0.8);">hi there!</span></h3>
+            <p ng-bind-html="greet"></p>
+        </article>
+        </div>
+    </div>
+    </section><!--end of intro //-->
+
+    <div id="ovsep">&nbsp;
+        <img src="img/strands.png"/>
+    </div>
+    <div id="hero">
+
+        <div class="row" style="background-color: #ffffff;">
+          <div class="medium-7 columns animated" data-animation="fadeInDownBig">
+              <img src="skate.jpg">
+          </div>
+          <div id="introText" class="medium-5 columns animated" data-animation="fadeInUpBig" data-animation-delay="200">
+            <h1 class="text-center"> About</h1><hr>
+            <p ng-bind-html="aboutP1"></p>
+            <p ng-bind-html="aboutP2"></p>
+          </div>
+        </div>
+
+     </div>
+    <div id="signup">
+        <div class="row">
+          <div class="large-12 columns animated" data-animation="flipInX">
+
+                <h1 class="text-left">Publications</h1>
+
+                <p class="text-left" ng-bind-html="paper1"></p>
+                <p class="text-left" ng-bind-html="paper2"></p>
+
+                <!--<p class="text-center">
+                    "I have always been delighted at the prospect of a new day,<br/>
+                    a fresh try, one more start,<br/>
+                    with perhaps a bit of magic waiting somewhere behind the morning."</p>//-->
+          </div>
+        </div>
+
+    </div>
+
+    <div id="three">
+        <div class="row">
+            <div class="row">
+          <div class="large-12 columns">
+
+                <h1 style="margin:20px; margin-bottom:40px;" class="text-left">Recent Work</h1>
+          </div>
+        </div>
+            <div class="medium-4 columns animated"  data-animation="flipInY">
+                <img src="1.jpg">
+                <h3 class="text-center">a multi-touch table</h3>
+            </div>
+            <div class="medium-4 columns animated" data-animation="flipInY" data-animation-delay="400">
+                <img src="2.jpg">
+                <h3 class="text-center">2D Physics using Skeleton Tracking</h3>
+            </div>
+            <div class="medium-4 columns animated" data-animation="flipInY" data-animation-delay="900">
+                <img src="3.jpg">
+                <h3 class="text-center">Physical computing interface</h3>
+            </div>
+        </div>
+    </div>
+
+    <div id="lower">
+        <div class="row">
+            <div class="medium-12 columns">
+                <h3 class="text-center">From the blog</h3>
+            </div>
+        </div>
+
+        <div id="recent-posts" class="row"></div>
+
+    </div>
+
+    <div id="footer">
+        <div class="row">
+          <div class="large-12 columns animated" data-animation="flipInX">
+              <p ng-bind-html="footer"></p>
+          </div>
+        </div>
+    </div>
+
+    <script src="js/foundation.min.js"></script>
+    <script src="js/jquery.appear.js"></script>
+    <script>
+        $(document).foundation();
+        $(document).ready(function($) {
+
+            var $j = jQuery.noConflict();
+            $j('#recent-posts').rssfeed('http://hamzeen.com/blog/?feed=rss2');
+
+            $('.animated').appear();
+            $('.animated').on('appear', function() {
+                var elem = $(this);
+                var animation = elem.data('animation');
+                if ( !elem.hasClass('visible') ) {
+                    var animationDelay = elem.data('animation-delay');
+                    if ( animationDelay ) {
+                        setTimeout(function(){
+                            elem.addClass( animation + " visible" );
+                        }, animationDelay);
+                    } else {
+                        elem.addClass( animation + " visible" );
+                    }
+                }
+            });
+
+        });
+    </script>
+
+  </body>
+</html>

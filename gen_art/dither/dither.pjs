@@ -1,0 +1,36 @@
+/**
+ * 'Dithered Strokes' a generative art sketch inspired 
+ * by the book found at, 
+ * http://trope-tank.mit.edu/10_PRINT_121114.pdf
+ * 
+ * @author Hamzeen. H.
+ * @created 02 May, 2013
+ * 
+ * first author: Casey Reas (co-author of Processing Development Environment), 
+ * http://reas.com/
+ */
+int xMax, muralSize;
+int frameSplit = 25,muralW = 20;
+
+void setup(){
+  size(window.innerWidth, window.innerHeight);
+  background(210,122,25);
+  stroke(255,255,255);
+  strokeWeight(2.2);
+
+  xMax = window.innerHeight-(window.innerWidth/muralW);
+  muralSize = (window.innerWidth/muralW);
+}
+
+void draw(){
+  int x=frameCount%frameSplit*muralSize;
+  int c=int(random(2))*muralSize;
+  line(x+c,xMax-muralSize-1,x+muralSize-c,xMax-1);
+  if(x==window.innerWidth-muralSize)set(0,0,get(0,muralSize,window.innerWidth,window.innerHeight));
+}
+
+window.onresize = function(event) {
+	size(window.innerWidth, window.innerHeight);
+	background(210,122,25);
+	stroke(255,255,255);//strokeWeight(1);
+}

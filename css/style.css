@@ -1838,6 +1838,11 @@ textarea {
 .copy{
 	margin-top: 29px;
 }
+
+.copy a, .copy a:hover{text-decoration: none;}
+.copy a{color:#ffffff;}
+.copy a:hover{color:#428bca;}
+
 .dm{
 	margin-top: 29px;
 }

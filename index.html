@@ -25,16 +25,29 @@
 		<script src="js/jquery.isotope.js" type="text/javascript"></script>
 
     <script type="text/javascript">
+    var resizeTimer;
+
     $(document).ready(function(){
-      //$window = $(window);
+      $window = $(window);
       var s = skrollr.init();
+      //$("body").css("height", "100%");
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(setHeight, 40);
 
 		  // Get window size
 	    //winH = $window.height();
 	    // Resize our slides
 	    //$slide.height(winH);
 	    // Refresh Skrollr after resizing our sections
-	    //s.refresh($('.homeSlide'));
+	    //s.refresh($("body"));
+    });
+    function setHeight() {
+      $("body").css("height", "100%");
+    };
+
+    $(window).resize(function() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(setHeight, 40);
     });
     </script>
 

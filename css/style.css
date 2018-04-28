@@ -20,10 +20,10 @@ body{
 }
 .emphasize {
 	padding: 4px 8px;
-	background: #f80;
+	background: rgba(236, 181, 62, 0.95);
 	border-radius: 5px;
 	color:#fff;
-}
+}/*#f80*/
 
 /* place holder color */
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */

@@ -1,65 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-		<title>Hamzeen | Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-		<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
-		<link rel='stylesheet' id='camera-css'  href='css/camera.css' type='text/css' media='all'>
+    <title>Hamzeen | Portfolio</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link rel="stylesheet" type="text/css" href="css/slicknav.css">
-		<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+	<link rel='stylesheet' id='camera-css'  href='css/camera.css' type='text/css' media='all'>
 
+	<link rel="stylesheet" type="text/css" href="css/slicknav.css">
+	<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 
-		<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-		<link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Open+Sans:700' rel='stylesheet' type='text/css'>
-		<script type="text/javascript" src="js/jquery.mobile.customized.min.js"></script>
-		<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+	<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+	<link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Open+Sans:700' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="js/jquery.mobile.customized.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 
-    <script type="text/javascript" src="js/camera.min.js"></script>
-		<script type="text/javascript" src="js/myscript.js"></script>
-		<script src="js/sorting.js" type="text/javascript"></script>
-		<script src="js/jquery.isotope.js" type="text/javascript"></script>
+	<script type="text/javascript" src="js/camera.min.js"></script>
+	<script type="text/javascript" src="js/myscript.js"></script>
+	<script src="js/sorting.js" type="text/javascript"></script>
+	<script src="js/jquery.isotope.js" type="text/javascript"></script>
 
     <script type="text/javascript">
-    $(function() {
-      function inViewport (el) {
-        //special bonus for those using jQuery
-        if (typeof jQuery === "function" && el instanceof jQuery) {
-          el = el[0];
+      $(function() {
+        function inViewport (el) {
+          //special bonus for those using jQuery
+          if (typeof jQuery === "function" && el instanceof jQuery) {
+            el = el[0];
+          }
+
+          var rect = el.getBoundingClientRect();
+          var elHeight = rect.bottom-rect.top;
+
+          var step = 90*1.0/elHeight;
+          if(rect.bottom<=elHeight && rect.bottom >=0) {
+            var delta = -rect.top * step;
+            $("#parallax_about").css("background-position", "50% " + (80 - delta) + "px");
+          }
         }
 
-        var rect = el.getBoundingClientRect();
-        var elHeight = rect.bottom-rect.top;
+        $(window).scroll(function() {
+          inViewport($('#parallax_about'));
+        });
 
-        var step = 120*1.0/elHeight;
-        if(rect.bottom<=elHeight && rect.bottom >=0) {
-          var delta = -rect.top * step;
-          $("#parallax_about").css("background-position", "50% " + (-108 - delta) + "px");
-        }
-      }
-
-      $(window).scroll(function() {
-        inViewport($('#parallax_about'));
+        $(window).resize(function() {
+          inViewport($('#parallax_about'));
+        });
       });
-
-      $(window).resize(function() {
-        inViewport($('#parallax_about'));
-      });
-    });
     </script>
-
-		<script><!-- text slider//-->
-			jQuery(function(){
-					jQuery('#intro_slide').camera({
-					transPeriod: 500,time: 3000,height: '440px',
-					thumbnails: false,pagination: false,playPause: false,loader: false,
-          navigation: false,hover: false
-				});
-			});
-		</script>
+	<script><!-- text slider//-->
+    $(function(){
+        $('#intro_slide').camera({
+		  transPeriod: 500,time: 3000,height: '440px',
+		  thumbnails: false, pagination: false,
+		  playPause: false, loader: false,
+          navigation: false, hover: false
+		});
+	  });
+	</script>
 	</head>
 	<body>
 
@@ -100,7 +100,7 @@
 				<div class="col-md-4 project">
 					<h3 id="counter1">0</h3>
 					<h4>Happy Users</h4>
-					<p>Through my applications & add-ons in the public domain.</p>
+					<!--<p>Through my applications & add-ons in the public domain.</p>//-->
 				</div>
 				<div class="col-md-4 project">
 					<h3 id="counter2" style="margin-left: 20px;">0</h3>
@@ -112,15 +112,16 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 cBusiness">
-          <h3>"They didn't know it was impossible, so they did it!"</h3>
-          <p style="text-align:center">- Mark Twain</p>
+          		  <h3>"Math is art in disguise"</h3>
+				  <!--<p style="text-align:center">- Hamzeen</p>//-->
 				</div>
 			</div>
 		</div>
+
 		<!--<div class="container">
 			<div class="row">
 				<div class="col-md-12 centPic">
-					<img class="img-responsive"  src="images/bizPic.png"/>
+					<img class="img-responsive"  src="images/img2.png"/>
 				</div>
 			</div>
 		</div>//-->
@@ -128,7 +129,7 @@
 
     <!--about start-->
     <div id="about">
-    	<div id="parallax_about" class="line2" style="background-position: 50% -108px">
+    	<div id="parallax_about" class="line2" style="background-position: 50% 80px">
 			<div class="container">
 				<div class="row Fresh">
 					<div class="col-md-4 Des">
@@ -149,37 +150,42 @@
 				</div>
 			</div>
 		</div>
-		<!--<div class="container">
-			<div class="row">
-				<div class="col-md-12 wwa">
-					<span name="about" ></span>
-					<h3>Skills</h3>
-					<h4>We listen, we discuss, we advise and develop. We love to learn and use the latest technologies.</h4>
-          <p>I have worked in both UI design and Front-End Development fields, being responsible for concept
-                to design and then translating them to thoughtful interactive experiences.
-                My work ranges from mobile to desktop & the occasional physical computing interfaces that I do.
-                I have had the pleasure of contributing at every phase of Software Projects,
-                whether it be disruptive products or face-lifting of exsiting solutions.
-                Here are few Skills I have picked up in the process.</p>
-				</div>
-			</div>
-		</div>//-->
+
 		<div id="img_author" class="container">
-			<div class="row team">
-				<div class="col-md-6 text-left">
-          <img class="img-responsive picsGall" src="images/hamzeen.jpg"/>
-				</div>
+          <div class="row team">
+		    <div class="col-md-6 text-left">
+              <img class="img-responsive picsGall" src="images/hamzeen.jpg"/>
+			</div>
 
+		    <div class="col-md-6">
+              <h3 class="seablue">Hi There !</h3>
+			  <p>
+				I'm Hamzeen, a <span class="emphasize">full stack developer</span>
+				living & working in The Hague, Netherlands. I specialise in front-end
+				web development with Node.js & Angular.
 
-				<div class="col-md-6">
-          <h3>About</h3>
-          <p style="font-size: 18px;line-height:36px;">I have worked in both UI design and Front-End Development fields, being responsible for concept
-                to design and then translating them to thoughtful interactive experiences.
-                My work ranges from mobile to desktop & the occasional physical computing interfaces that I do.
-                I have had the pleasure of contributing at every phase of a Software Project,
-                whether it be disruptive products or face-lifting of exsiting solutions.
-                Here are few Skills I have picked up in the process.</p>
-				</div>
+				After creating websites for almost a decade, I'm still fascinated
+				by the challenges involved in turning complex user journeys into
+				novel user experiences.
+
+				I graduated from University of Westminster, London in 2010 with First Class
+				Honours in Software Engineering.
+
+				<!--novel interfaces that're esthetically pleasing & responsive and brewed by clean code.
+					I'm still fascinated to complex user journeys and transform them into
+        	      	novel interfaces that are responsive from outside & have a clean code inside.//-->
+		  	  </p>
+
+		  	  <p>
+				In the past, I've published several libraries, experiments & apps.
+				<span class="emphasize">Deciber</span> - an augmented reality (AR) noise measurement tool for Android,
+				<span class="emphasize">Perception</span> - an official chrome experiment,
+				<span class="emphasize">Scrollize.js</span> - a jQuery plugin for parallax effect,
+				<span class="emphasize">FlipVision</span> - an experiment on employing motion detection to interact with a webpage &
+				<span class="emphasize">NgToast.js</span> - toast & notification service for Angular.js apps are few of them.
+				You can find all public projects on <span class="emphasize">GitHub</span>. Here are few Skills I have picked up in the process.
+		  	  </p>
+		  </div>
 
 
 			</div>
@@ -252,12 +258,13 @@
     <!--project start-->
     <div id="project">
 		<div class="line3">
+			<div class="overlay"></div>
 			<div class="container">
 				<div id="project1" ></div>
 				<div class="row Ama">
 					<div class="col-md-12">
 					<span name="projects" id="projectss"></span>
-					<h3 style="text-shadow: 0px 0px 3px rgba(15, 15, 15, 0.89);">My Work</h3>
+					<h3 style="text-shadow: 0px 0px 3px rgba(15, 15, 15, 0.89);">Work</h3>
 					<p style="text-shadow: 0px 0px 3px rgba(10, 10, 10, 0.92);">Here are some projects from the past</p>
 					</div>
 				</div>
@@ -386,7 +393,7 @@
 			<div class="container">
 				<div class="row Ama">
 					<div class="col-md-12">
-					<h3 style="text-shadow: 0px 0px 3px rgba(15, 15, 15, 0.89);">What&rsquo;s New?</h3>
+					<h3 style="text-shadow: 0px 0px 3px rgba(15, 15, 15, 0.89);">News</h3>
 					<p style="text-shadow: 0px 0px 3px rgba(15, 15, 15, 0.89);">please head over to my blog or github page for the latest</p>
 					</div>
 				</div>
@@ -424,110 +431,60 @@
 					</div>
 				</div>
 			</div>
-
-			<!--<div class="container">
-				<div class="row news2 news">
-					<div class="col-md-6 text-left">
-					<img class="img-responsive picsGall" src="images/picNews/news3.jpg"/>
-					<h3><a href="#">Lorem Ipsum Dolor sit Amet Pelenntesque Sodales!</a></h3>
-					<ul>
-						<li><i class="fa fa-calendar"></i>April 25, 2014</li>
-						<li><a href="#"><i class="fa fa-folder-open"></i>Staff</a></li>
-						<li><a href="#"><i class="fa fa-comments"></i>17 comments</a></li>
-					</ul>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. adipiscing vitae vel quam proin eget mauris eget. <a class="readMore" href="#">Read More <i class="fa fa-angle-right"></i></a></p>
-					<hr class="hrNews">
-					</div>
-					<div class="col-md-6 text-right">
-					<img class="img-responsive picsGall" src="images/picNews/news4.jpg"/>
-					<h3><a href="#">Nam in Nisl id Ipsum Feugiat Posuere ut sit Amet Sem</a></h3>
-					<ul>
-						<li><i class="fa fa-calendar"></i>April 25, 2014</li>
-						<li><a href="#"><i class="fa fa-folder-open"></i>Staff</a></li>
-						<li><a href="#"><i class="fa fa-comments"></i>17 comments</a></li>
-					</ul>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. adipiscing vitae vel quam proin eget mauris eget. <a class="readMore" href="#">Read More <i class="fa fa-angle-right"></i></a></p>
-					<hr class="hrNews">
-					</div>
-				</div>
-			</div>
-			<!--<div class="container">
-				<div class="row news2 news">
-					<div class="col-md-6 text-left">
-					<img class="img-responsive picsGall" src="images/picNews/news5.jpg"/>
-					<h3 ><a href="#">Lorem Ipsum Dolor sit Amet Pelenntesque Sodales!</a></h3>
-					<ul>
-						<li><i class="fa fa-calendar"></i>April 25, 2014</li>
-						<li><a href="#"><i class="fa fa-folder-open"></i>Staff</a></li>
-						<li><a href="#"><i class="fa fa-comments"></i>17 comments</a></li>
-					</ul>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. adipiscing vitae vel quam proin eget mauris eget. <a class="readMore" href="#">Read More <i class="fa fa-angle-right"></i></a></p>
-					<hr class="hrNews">
-					</div>
-					<div class="col-md-6 text-right">
-					<img class="img-responsive picsGall" src="images/picNews/news6.jpg"/>
-					<h3><a href="#">Nam in Nisl id Ipsum Feugiat Posuere ut sit Amet Sem</a></h3>
-					<ul>
-						<li><i class="fa fa-calendar"></i>April 25, 2014</li>
-						<li><a href="#"><i class="fa fa-folder-open"></i>Staff</a></li>
-						<li><a href="#"><i class="fa fa-comments"></i>17 comments</a></li>
-					</ul>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. adipiscing vitae vel quam proin eget mauris eget. <a class="readMore" href="#">Read More <i class="fa fa-angle-right"></i></a></p>
-					<hr class="hrNews">
-					</div>
-				</div>
-			</div>//-->
-
-
-
-			<!--<div class="container hideObj2" style="display:none;">
-				<div class="row news2 news">
-					<div class="col-md-6 text-right">
-					<img class="img-responsive picsGall" src="images/picNews/news6.jpg"/>
-					<h3><a href="#">Nam in Nisl id Ipsum Feugiat Posuere ut sit Amet Sem</a></h3>
-					<ul>
-						<li><i class="fa fa-calendar"></i>April 25, 2014</li>
-						<li><a href="#"><i class="fa fa-folder-open"></i>Staff</a></li>
-						<li><a href="#"><i class="fa fa-comments"></i>17 comments</a></li>
-					</ul>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. adipiscing vitae vel quam proin eget mauris eget. <a class="readMore" href="#">Read More <i class="fa fa-angle-right"></i></a></p>
-					<hr class="hrNews">
-					</div>
-					<div class="col-md-6 text-left">
-					<img class="img-responsive picsGall" src="images/picNews/news5.jpg"/>
-					<h3 ><a href="#">Lorem Ipsum Dolor sit Amet Pelenntesque Sodales!</a></h3>
-					<ul>
-						<li><i class="fa fa-calendar"></i>April 25, 2014</li>
-						<li><a href="#"><i class="fa fa-folder-open"></i>Staff</a></li>
-						<li><a href="#"><i class="fa fa-comments"></i>17 comments</a></li>
-					</ul>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quisque tempus ac eget diam et laoreet phasellus ut nisi id leo molestie. adipiscing vitae vel quam proin eget mauris eget. <a class="readMore" href="#">Read More <i class="fa fa-angle-right"></i></a></p>
-					<hr class="hrNews">
-					</div>
-				</div>
-			</div>HIDDEN//-->
-
-			<!--<div class="container">
-			<div class="row cBtn">
-				<div class="col-md-12" style="text-align: center; margin-bottom: -90px; z-index: 10;">
-					<ul class="mNews">
-						<li class="dowbload bhide2"><a href="#"><i class="fa fa-arrow-down"></i>Load More news</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>//-->
     </div>
 
 
-    <!--contact start-->
-    <div id="contact">
+	<!--start of contcat form //-->
+	<div id="contact">
+
+		<div class="line5">
+			<div class="container">
+				<div class="row Ama">
+					<div class="col-md-12">
+						<h3>Are we on the same wavelength?</h3>
+						<p><span class="emphasize">fill the form below, I'll get back to you ASAP!</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+
+				<div class="col-md-9 col-xs-12 forma">
+					<form id="form-contact" method="post" action="https://formspree.io">
+
+						<input type="text" class="col-md-6 col-xs-12 name" name='name' placeholder='Name *'/>
+						<input type="text" class="col-md-6 col-xs-12 Email" name='email' placeholder='Email *'/>
+
+						<input type="hidden" name="_subject" value="Portfolio Form Submission">
+						<!--<input type="text" class="col-md-12 col-xs-12 Subject" name='_subject' placeholder='Subject'/>//-->
+						<textarea class="col-md-12 col-xs-12 Message" name="message" placeholder="Message *"></textarea>
+
+						<div class="cBtn col-xs-12">
+							<ul>
+								<li class="clear" id="clear-forma"><a><i class="fa fa-times"></i>Clear form</a></li>
+								<li class="send" id="send-forma"><a><i class="fa fa-share"></i>Send Message</a></li>
+							</ul>
+						</div>
+					</form>
+				</div>
+
+				<div class="col-md-3 col-xs-12 cont">
+					<ul id="verbose">
+						<li>&nbsp;</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
 		<div class="line7">
 			<div class="container">
 				<div class="row footer">
 
           <div class="col-md-12">
             <h3>Get in Touch!</h3>
-  				</div>
+  		  </div>
 
 					<div class="col-md-12">
               <h4>Thanks for stopping by and if you like to be in touch with me,
@@ -549,41 +506,49 @@
 			<div class="container">
 				<div class="row downLine">
 					<div class="col-md-6 text-left copy">
-				            <p>Hamzeen Hamzeem, Software Consultant<br/>
-						<a target="_blank" href="https://hamzeen.wordpress.com/">Blog</a> |
-              					<a target="_blank" href="http://codepen.io/hamzeen">CodePen</a> |
-						<a target="_blank" href="http://github.com/hamzeen">Github</a>
-	      					
+						<p>Hamzeen Hameem, Full Stack Developer<br/>
+							<a target="_blank" href="https://hamzeen.wordpress.com/"> Blog</a> &nbsp;
+							<a target="_blank" href="http://codepen.io/hamzeen">CodePen</a> &nbsp;
+							<a target="_blank" href="http://github.com/hamzeen">Github</a>
+
 					</div>
 					<div class="col-md-6 text-right dm">
-						&nbsp;
+
+					  <ul id="downMenu">
+					    <li class="active"><a href="#home">Home</a></li>
+					    <li><a href="#about">About</a></li>
+					    <li><a href="#project1">Work</a></li>
+					    <li><a href="#news">News</a></li>
+					    <li class="last"><a href="#contact">Contact</a></li>
+					  </ul>
 					</div>
 				</div>
 			</div>
 		</div>
-    </div>
+	</div>	<!-- end of contact form //-->
 
 
 	<script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script>
-			$(document).ready(function(){
-			$(".bhide").click(function(){
-				$(".hideObj").slideDown();
-				$(this).hide(); //.attr()
-				return false;
-			});
-			$(".bhide2").click(function(){
-				$(".container.hideObj2").slideDown();
-				$(this).hide(); // .attr()
-				return false;
-			});
+	  $(document).ready(function() {
+	    $(".bhide").click(function() {
+		  $(".hideObj").slideDown();
+		  $(this).hide();
+		  return false;
+		});
 
-			$('.heart').mouseover(function() {
-					$(this).find('i').removeClass('fa-heart-o').addClass('fa-heart');
-				}).mouseout(function(){
-					$(this).find('i').removeClass('fa-heart').addClass('fa-heart-o');
-				});
+			  $(".bhide2").click(function(){
+			    $(".container.hideObj2").slideDown();
+				$(this).hide();
+				return false;
+			  });
+
+			  $('.heart').mouseover(function() {
+				$(this).find('i').removeClass('fa-heart-o').addClass('fa-heart');
+			  }).mouseout(function(){
+				$(this).find('i').removeClass('fa-heart').addClass('fa-heart-o');
+			  });
 
 				function sdf_FTS(_number,_decimal,_separator) {
 				      var decimal=(typeof(_decimal)!='undefined')?_decimal:2;
@@ -596,55 +561,90 @@
 				    r=(rr[1]?b+'.'+rr[1]:b);
 
 				    return r;
-        }
+        		}
 
-			setTimeout(function(){
-					$('#counter').text('0');
-					$('#counter1').text('0');
-					$('#counter2').text('0');
+				setTimeout(function() {
+					$('#counter').text('0'); $('#counter1').text('0'); $('#counter2').text('0');
 
-					setInterval(function(){
-
+					setInterval(function() {
 						var curval=parseInt($('#counter').text());
 						var curval1=parseInt($('#counter1').text().replace(' ',''));
 						var curval2=parseInt($('#counter2').text());
-						if(curval<=51){
+						if (curval<=49) {
 							$('#counter').text(curval+1);
-						}
-						if(curval1<=9999){
+						} if (curval1<=19999) {
 							$('#counter1').text(sdf_FTS((curval1+20),0,' '));
-						}
-						if(curval2<=4){
+						} if (curval2<=4) {
 							$('#counter2').text(curval2+1);
 						}
 					}, 2);
-
 				}, 500);
 			});
 	</script>
 
-
 	<script type="text/javascript">
-    $(document).ready(function(){
+      $(document).ready(function() {
+
+        // validate and dispatch from contact form
+        $("#send-forma").click(function() {
+          $("#verbose").empty();
+          var msgPref = "<i class=\'fa fa-check-circle\'></i>";
+		  var form = $("#form-contact"); var inputs = [];
+          var isValid = true;
+
+          var nameReg = /^[a-zA-Z\s]*$/;
+          var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+
+            $("form#form-contact :input").each(function(idx){
+                inputs.push($(this).val());
+            });
+
+            if (inputs[0] === "" || !nameReg.test(inputs[0])) {
+                $("#verbose").append('<li>'+ msgPref + 'please provide your name' + '</li>');
+                isValid = false;
+			} if (isValid && (inputs[1] === "" || !emailReg.test(inputs[1]))) {
+                $("#verbose").append('<li>'+ msgPref + 'please provide a valid email address' + '</li>');
+                isValid = false;
+			} if (isValid && inputs[3] === "") {
+                $("#verbose").append('<li>'+ msgPref + 'please type in your message' + '</li>');
+                isValid = false;
+			} if (isValid) {
+                $.ajax({
+                    type: form.attr('method'),
+                    url: form.attr('action') + '/' + atob('aGFtemVlbkBsaXZlLmNvbQ=='),
+                    data: form.serialize(), // serialize the form's elements.
+                    success: function(response) {
+                        // re-render the entire document
+                        var newDoc = document.open("text/html", "replace");
+                        newDoc.write(response);
+                        newDoc.close();
+
+                        // $('.form').html('<span class="success-msg">Thank you for your message!
+						// we'will respond to your email as soon as possible.</span>');
+                    }
+                });
+            }
+        });
+
+        $("#clear-forma").click(function() {
+            document.getElementById("form-contact").reset();
+        });
 
         var $menu = $("#menuF");
         $(window).scroll(function(){
             if ( $(this).scrollTop() > 100 && $menu.hasClass("default") ){
                 $menu.fadeOut('fast',function(){
                     $(this).removeClass("default")
-                           .addClass("fixed transbg")
-                           .fadeIn('fast');
+                      .addClass("fixed transbg").fadeIn('fast');
                 });
             } else if($(this).scrollTop() <= 100 && $menu.hasClass("fixed")) {
                 $menu.fadeOut('fast',function(){
                     $(this).removeClass("fixed transbg")
-                           .addClass("default")
-                           .fadeIn('fast');
+                      .addClass("default").fadeIn('fast');
                 });
             }
         });
-	});
-    //jQuery
+	});//jQuery
 	</script>
 	<script type="text/javascript" charset="utf-8">
 		jQuery(document).ready(function(){
@@ -652,5 +652,4 @@
 		});
 	</script>
 	</body>
-
 </html>

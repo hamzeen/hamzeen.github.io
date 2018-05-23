@@ -1289,12 +1289,12 @@ textarea {
 	font-weight: 300;
 	font-size:20px;
 	color:#88e;
-	background:#ededed;
+	background: rgba(0, 0, 0, .03);
 	border:none;
-    max-width: 816px;
+        max-width: 816px;
 	height: 153px;
-    resize: none;
-   }
+        resize: none;
+}
 .forma input:focus, .forma textarea:focus{
 	background: rgba(205, 205, 230, .1);
 	border: 1px solid #FFF;

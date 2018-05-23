@@ -1297,8 +1297,8 @@ textarea {
    }
 .forma input:focus, .forma textarea:focus{
 	background: rgba(205, 205, 230, .1);
-	border: 1px solid #FFF;
-	border-bottom: 1px solid #88e;
+	border: 1px solid #FFF;
+	border-bottom: 1px solid #88e;
 }
 .forma .cBtn a{
 	font-family: 'Roboto', 'sans-serif';

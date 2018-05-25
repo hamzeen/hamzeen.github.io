@@ -1256,7 +1256,7 @@ border: none;
 	font-size: 20px;
 	color: #88e;
 	background: rgba(0,0,0, .03);
-	transition: all .3s;
+	transition: all .5s;
 }
 input:focus{
 	//border:0;
@@ -1292,6 +1292,7 @@ textarea {
         max-width: 816px;
 	height: 153px;
         resize: none;
+	transition: all .5s;
 }
 .forma input:focus, .forma textarea:focus{
 	background: rgba(205, 205, 230, .1);

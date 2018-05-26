@@ -1240,23 +1240,25 @@ border: none;
 	border-right: 3000px solid transparent;
 	//bottom: 489px;
 }
-/**/
+
+/* Form Styles*/
 .forma{
 	margin-bottom: -80px;
 	z-index: 10;
 	margin-top: 48px;
 }
 .forma input {
-	/*border-radius: 4px;*/
 	padding-top: 15px;
 	padding-bottom: 15px;
 	border: 1px solid #FFF;
+	
 	font-family: 'Roboto', 'sans-serif';
 	font-weight: 300;
 	font-size: 20px;
 	color: #88e;
-	background: rgba(0,0,0, .03);
-	transition: all .6s;
+	
+	background: rgba(0, 0, 0, .03);
+	transition: all .5s;
 }
 input:focus{
 	//border:0;

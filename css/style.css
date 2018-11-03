@@ -1293,8 +1293,8 @@ textarea {
 	border: 1px solid #FFF;
         max-width: 816px;
 	height: 153px;
-        resize: none;
-	transition: all .6s;
+	resize: none;
+	transition: all .6s;
 }
 .forma input:focus, .forma textarea:focus{
 	background: rgba(205, 205, 230, .1);

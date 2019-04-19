@@ -1514,20 +1514,20 @@ textarea {
 	border-right: 3000px solid transparent;
 	//bottom: 489px;
 }
-.footer{
+.footer {
 	margin-top: 125px;
 	min-height:380px;
 }
-.footer h3{
+.footer h3 {
 	margin-top: 80px;
 	font-size: 28px;
 	font-family: 'Roboto', 'sans-serif';
-	font-weight: 400;
+	font-weight: 300;
 	color: #fff;
 	text-align: center;
 	margin-bottom: 10px;
 }
-.footer h4{
+.footer h4 {
 	margin-top: 60px;
 	margin-bottom: -25px;
 	font-size: 21px;

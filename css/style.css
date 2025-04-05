@@ -516,7 +516,7 @@ border: none;
 	font-family: 'Roboto', 'sans-serif';
 	font-weight: 300;
 	line-height: 36px;
-	text-align: justify;
+	text-align: left;
 }
 .team ul{
 	margin-top: 2px;

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 
 type SearchItem = {
-  type: 'page' | 'blog';
+  type: 'page' | 'blog' | 'topic';
   title: string;
   url: string;
   summary: string;

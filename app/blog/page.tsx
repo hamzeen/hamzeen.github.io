@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { getAllBlogs, getAllKeywords } from '@/lib/blogs';
+import { getAllBlogs, getAllKeywordTopics } from '@/lib/blogs';
 
 export const metadata = {
   title: 'Blog | Hamzeen',
@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 export default async function BlogPage() {
-  const [posts, keywords] = await Promise.all([getAllBlogs(), getAllKeywords()]);
+  const [posts, topics] = await Promise.all([getAllBlogs(), getAllKeywordTopics()]);
 
   return (
     <main className="container page-shell">
@@ -21,9 +21,9 @@ export default async function BlogPage() {
       </section>
 
       <section className="keyword-panel" aria-label="Blog keywords">
-        {keywords.map((keyword) => (
-          <Link key={keyword} href={`/search?q=${encodeURIComponent(keyword)}`}>
-            {keyword}
+        {topics.map((topic) => (
+          <Link key={topic.slug} href={`/topics/${topic.slug}`}>
+            {topic.name}
           </Link>
         ))}
       </section>

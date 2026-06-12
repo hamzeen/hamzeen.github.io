@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { getAllBlogs } from "../lib/blogs";
+import { getAllBlogs, getAllKeywordTopics } from "../lib/blogs";
 
 const SITE_URL = "https://hamzeen.github.io";
 
@@ -32,7 +32,7 @@ function createUrlEntry({
 }
 
 async function generateSitemap() {
-    const blogs = await getAllBlogs();
+    const [blogs, topics] = await Promise.all([getAllBlogs(), getAllKeywordTopics()]);
 
     const staticRoutes = [
         { url: "/", priority: "1.0" },
@@ -40,6 +40,7 @@ async function generateSitemap() {
         { url: "/contact", priority: "0.7" },
         { url: "/blog", priority: "0.9" },
         { url: "/search", priority: "0.6" },
+        { url: "/topics", priority: "0.7" },
     ];
 
     const blogRoutes = blogs.map((post) => ({
@@ -48,7 +49,12 @@ async function generateSitemap() {
         priority: "0.8",
     }));
 
-    const entries = [...staticRoutes, ...blogRoutes].map(createUrlEntry).join("");
+    const topicRoutes = topics.map((topic) => ({
+        url: `/topics/${topic.slug}`,
+        priority: "0.6",
+    }));
+
+    const entries = [...staticRoutes, ...blogRoutes, ...topicRoutes].map(createUrlEntry).join("");
 
     const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
@@ -59,7 +65,9 @@ ${entries}
     fs.mkdirSync(publicDir, { recursive: true });
     fs.writeFileSync(sitemapPath, sitemap.trim());
 
-    console.log(`Generated sitemap.xml with ${staticRoutes.length + blogRoutes.length} routes`);
+    console.log(
+        `Generated sitemap.xml with ${staticRoutes.length + blogRoutes.length + topicRoutes.length} routes`
+    );
 }
 
 generateSitemap();

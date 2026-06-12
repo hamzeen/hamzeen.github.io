@@ -27,6 +27,30 @@
   },
   {
     "type": "page",
+    "title": "Blog",
+    "url": "/blog",
+    "summary": "Technical writing on frontend architecture, backend systems and software design.",
+    "keywords": [
+      "blog",
+      "technical writing",
+      "architecture",
+      "software design"
+    ]
+  },
+  {
+    "type": "page",
+    "title": "Topics",
+    "url": "/topics",
+    "summary": "Browse technical writing by topic.",
+    "keywords": [
+      "topics",
+      "keywords",
+      "tags",
+      "blog"
+    ]
+  },
+  {
+    "type": "page",
     "title": "Contact",
     "url": "/contact",
     "summary": "Contact Hamzeen for engineering, architecture and collaboration.",
@@ -34,6 +58,292 @@
       "contact",
       "collaboration",
       "software engineering"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "Angular",
+    "url": "/topics/angular",
+    "summary": "Browse posts about Angular.",
+    "keywords": [
+      "Angular",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "Backend Architecture",
+    "url": "/topics/backend-architecture",
+    "summary": "Browse posts about Backend Architecture.",
+    "keywords": [
+      "Backend Architecture",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "BullMQ",
+    "url": "/topics/bullmq",
+    "summary": "Browse posts about BullMQ.",
+    "keywords": [
+      "BullMQ",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "Clean Architecture",
+    "url": "/topics/clean-architecture",
+    "summary": "Browse posts about Clean Architecture.",
+    "keywords": [
+      "Clean Architecture",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "Design Patterns",
+    "url": "/topics/design-patterns",
+    "summary": "Browse posts about Design Patterns.",
+    "keywords": [
+      "Design Patterns",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "Frontend Architecture",
+    "url": "/topics/frontend-architecture",
+    "summary": "Browse posts about Frontend Architecture.",
+    "keywords": [
+      "Frontend Architecture",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "Java",
+    "url": "/topics/java",
+    "summary": "Browse posts about Java.",
+    "keywords": [
+      "Java",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "JavaScript",
+    "url": "/topics/javascript",
+    "summary": "Browse posts about JavaScript.",
+    "keywords": [
+      "JavaScript",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "JNI",
+    "url": "/topics/jni",
+    "summary": "Browse posts about JNI.",
+    "keywords": [
+      "JNI",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "JVM",
+    "url": "/topics/jvm",
+    "summary": "Browse posts about JVM.",
+    "keywords": [
+      "JVM",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "Micro Frontends",
+    "url": "/topics/micro-frontends",
+    "summary": "Browse posts about Micro Frontends.",
+    "keywords": [
+      "Micro Frontends",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "Module Federation",
+    "url": "/topics/module-federation",
+    "summary": "Browse posts about Module Federation.",
+    "keywords": [
+      "Module Federation",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "Native Code",
+    "url": "/topics/native-code",
+    "summary": "Browse posts about Native Code.",
+    "keywords": [
+      "Native Code",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "Node.js",
+    "url": "/topics/nodejs",
+    "summary": "Browse posts about Node.js.",
+    "keywords": [
+      "Node.js",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "React",
+    "url": "/topics/react",
+    "summary": "Browse posts about React.",
+    "keywords": [
+      "React",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "Redis",
+    "url": "/topics/redis",
+    "summary": "Browse posts about Redis.",
+    "keywords": [
+      "Redis",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "Repository Pattern",
+    "url": "/topics/repository-pattern",
+    "summary": "Browse posts about Repository Pattern.",
+    "keywords": [
+      "Repository Pattern",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "Search",
+    "url": "/topics/search",
+    "summary": "Browse posts about Search.",
+    "keywords": [
+      "Search",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "Sharp",
+    "url": "/topics/sharp",
+    "summary": "Browse posts about Sharp.",
+    "keywords": [
+      "Sharp",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "Software Teams",
+    "url": "/topics/software-teams",
+    "summary": "Browse posts about Software Teams.",
+    "keywords": [
+      "Software Teams",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "SSE",
+    "url": "/topics/sse",
+    "summary": "Browse posts about SSE.",
+    "keywords": [
+      "SSE",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "Strategy Pattern",
+    "url": "/topics/strategy-pattern",
+    "summary": "Browse posts about Strategy Pattern.",
+    "keywords": [
+      "Strategy Pattern",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "Templating",
+    "url": "/topics/templating",
+    "summary": "Browse posts about Templating.",
+    "keywords": [
+      "Templating",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "TypeScript",
+    "url": "/topics/typescript",
+    "summary": "Browse posts about TypeScript.",
+    "keywords": [
+      "TypeScript",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "UI Rendering",
+    "url": "/topics/ui-rendering",
+    "summary": "Browse posts about UI Rendering.",
+    "keywords": [
+      "UI Rendering",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "Worker Threads",
+    "url": "/topics/worker-threads",
+    "summary": "Browse posts about Worker Threads.",
+    "keywords": [
+      "Worker Threads",
+      "topic",
+      "blog"
     ]
   },
   {

@@ -26,6 +26,22 @@ export type BlogPost = BlogFrontmatter & {
   html: string;
 };
 
+export type KeywordTopic = {
+  name: string;
+  slug: string;
+  count: number;
+};
+
+export function slugifyKeyword(keyword: string) {
+  return keyword
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, ' and ')
+    .replace(/\./g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 async function getBlogFileNames() {
   const files = await fs.readdir(BLOGS_DIR);
   return files.filter((file) => file.endsWith('.md') || file.endsWith('.mdx'));
@@ -98,8 +114,45 @@ export async function getBlogBySlug(slug: string): Promise<BlogPost | null> {
 }
 
 export async function getAllKeywords() {
+  const topics = await getAllKeywordTopics();
+  return topics.map((topic) => topic.name);
+}
+
+export async function getAllKeywordTopics(): Promise<KeywordTopic[]> {
   const posts = await getAllBlogs();
-  return Array.from(new Set(posts.flatMap((post) => post.keywords))).sort((a, b) =>
-    a.localeCompare(b)
+  const topicMap = new Map<string, KeywordTopic>();
+
+  for (const post of posts) {
+    for (const keyword of post.keywords) {
+      const slug = slugifyKeyword(keyword);
+      if (!slug) continue;
+
+      const existing = topicMap.get(slug);
+
+      if (existing) {
+        existing.count += 1;
+      } else {
+        topicMap.set(slug, {
+          name: keyword,
+          slug,
+          count: 1
+        });
+      }
+    }
+  }
+
+  return Array.from(topicMap.values()).sort((a, b) => a.name.localeCompare(b.name));
+}
+
+export async function getBlogsByKeywordSlug(keywordSlug: string): Promise<BlogFrontmatter[]> {
+  const posts = await getAllBlogs();
+
+  return posts.filter((post) =>
+    post.keywords.some((keyword) => slugifyKeyword(keyword) === keywordSlug)
   );
+}
+
+export async function getKeywordTopicBySlug(keywordSlug: string): Promise<KeywordTopic | null> {
+  const topics = await getAllKeywordTopics();
+  return topics.find((topic) => topic.slug === keywordSlug) ?? null;
 }

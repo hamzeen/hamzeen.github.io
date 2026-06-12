@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { getAllBlogs, getBlogBySlug } from '@/lib/blogs';
+import { getAllBlogs, getBlogBySlug, slugifyKeyword } from '@/lib/blogs';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -40,7 +40,9 @@ export default async function BlogDetailPage({ params }: Props) {
           <p>{post.summary}</p>
           <div className="tag-row">
             {post.keywords.map((keyword) => (
-              <span key={keyword}>{keyword}</span>
+              <Link key={keyword} href={`/topics/${slugifyKeyword(keyword)}`}>
+                {keyword}
+              </Link>
             ))}
           </div>
         </header>

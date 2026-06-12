@@ -7,7 +7,7 @@ const blogsDir = path.join(root, 'content', 'blogs');
 const publicDir = path.join(root, 'public');
 
 type SearchItem = {
-  type: 'page' | 'blog';
+  type: 'page' | 'blog' | 'topic';
   title: string;
   url: string;
   summary: string;
@@ -32,6 +32,20 @@ const staticPages: SearchItem[] = [
   },
   {
     type: 'page',
+    title: 'Blog',
+    url: '/blog',
+    summary: 'Technical writing on frontend architecture, backend systems and software design.',
+    keywords: ['blog', 'technical writing', 'architecture', 'software design']
+  },
+  {
+    type: 'page',
+    title: 'Topics',
+    url: '/topics',
+    summary: 'Browse technical writing by topic.',
+    keywords: ['topics', 'keywords', 'tags', 'blog']
+  },
+  {
+    type: 'page',
     title: 'Contact',
     url: '/contact',
     summary: 'Contact Hamzeen for engineering, architecture and collaboration.',
@@ -48,6 +62,16 @@ function stripMarkdown(content: string) {
     .trim();
 }
 
+function slugifyKeyword(keyword: string) {
+  return keyword
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, ' and ')
+    .replace(/\./g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
 async function main() {
   await fs.mkdir(publicDir, { recursive: true });
 
@@ -58,6 +82,8 @@ async function main() {
       .map(async (file) => {
         const raw = await fs.readFile(path.join(blogsDir, file), 'utf8');
         const { data, content } = matter(raw);
+        if (data.draft) return null;
+
         const slug = String(data.slug ?? file.replace(/\.mdx?$/, ''));
         const keywords = Array.isArray(data.keywords) ? data.keywords.map(String) : [];
         const summary = String(data.summary ?? stripMarkdown(content).slice(0, 180));
@@ -73,15 +99,25 @@ async function main() {
       })
   );
 
-  const searchIndex = [...staticPages, ...blogItems];
-  const keywords = Array.from(new Set(searchIndex.flatMap((item) => item.keywords))).sort((a, b) =>
+  const publishedBlogItems = blogItems.filter(
+    (item): item is NonNullable<(typeof blogItems)[number]> => Boolean(item)
+  );
+  const keywords = Array.from(new Set(publishedBlogItems.flatMap((item) => item.keywords))).sort((a, b) =>
     a.localeCompare(b)
   );
+  const topicItems: SearchItem[] = keywords.map((keyword) => ({
+    type: 'topic',
+    title: keyword,
+    url: `/topics/${slugifyKeyword(keyword)}`,
+    summary: `Browse posts about ${keyword}.`,
+    keywords: [keyword, 'topic', 'blog']
+  }));
+  const searchIndex = [...staticPages, ...topicItems, ...publishedBlogItems];
 
   await fs.writeFile(path.join(publicDir, 'search-index.json'), JSON.stringify(searchIndex, null, 2));
   await fs.writeFile(path.join(publicDir, 'keywords.json'), JSON.stringify({ keywords }, null, 2));
 
-  console.log(`Generated ${blogItems.length} blog entries and ${keywords.length} keywords.`);
+  console.log(`Generated ${publishedBlogItems.length} blog entries and ${keywords.length} keywords.`);
 }
 
 main().catch((error) => {

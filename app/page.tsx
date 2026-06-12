@@ -19,7 +19,7 @@ export default async function HomePage() {
     return (
         <main>
             <section className="container intro-grid section-space">
-                <img src="images/hamzeen-2025.jpg" />
+                <img src="/images/hamzeen-2025.jpg" alt="skiing" />
 
                 <div className="copy-block">
                     <p>Hi There!</p>

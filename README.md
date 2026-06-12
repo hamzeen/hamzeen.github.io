@@ -65,5 +65,3 @@ For a project Pages site like `hamzeen.github.io/my-repo`, build with:
 ```bash
 NEXT_PUBLIC_BASE_PATH=/my-repo npm run build
 ```
-
-update: LC

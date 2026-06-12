@@ -14,35 +14,35 @@ A static Next.js portfolio and blog designed for GitHub Pages.
 
 ## Commands
 
-| Command | Purpose |
-|---|---|
-| `npm install` | Install dependencies |
-| `npm run dev` | Start local development server |
+| Command         | Purpose                                         |
+| --------------- | ----------------------------------------------- |
+| `npm install`   | Install dependencies                            |
+| `npm run dev`   | Start local development server                  |
 | `npm run build` | Generate search JSON and export the static site |
 
 ## Add a new blog
 
 Create a new Markdown file inside `content/blogs`.
 
-~~~md
+````md
 ---
 title: "My New Blog"
 slug: "my-new-blog"
 date: "2026-06-12"
 summary: "Short summary for listing and search."
 keywords:
-  - Angular
-  - System Design
-  - TypeScript
+    - Angular
+    - System Design
+    - TypeScript
 ---
 
 Write your blog here.
 
 ```ts
-const message = 'Code blocks are highlighted by Shiki';
+const message = "Code blocks are highlighted by Shiki";
 console.log(message);
 ```
-~~~
+````
 
 Then run:
 
@@ -65,3 +65,5 @@ For a project Pages site like `hamzeen.github.io/my-repo`, build with:
 ```bash
 NEXT_PUBLIC_BASE_PATH=/my-repo npm run build
 ```
+
+update: LC

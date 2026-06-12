@@ -1,0 +1,115 @@
+/**
+ * 'Perception', a generative art sketch.
+ * 
+ * @author Hamzeen. H.
+ * @created 09 May, 2013
+ */
+
+Point[] allPoints;
+int ballAmount = 112;
+int threshold = 85;
+
+void setup() {
+  size(window.innerWidth, window.innerHeight);
+  smooth();strokeCap(PROJECT);
+  //background(13,72,56);
+  fill(239,239,239);
+
+  // init points
+  allPoints = new Point[ballAmount];
+  for (int i = 0; i < ballAmount; i++) {
+    allPoints[i] = new Point();
+    allPoints[i].setup();
+  }
+}
+ 
+void draw() {
+  //background(13,72,56);
+  externals.context.clearRect(0,0,width,height);
+  for (int i = 0; i < ballAmount; i++) {
+    if(i%4==0) allPoints[i].step();
+
+    for (int j = 0; j < i; j++) {
+      if (i != j) {
+        float distBalls = dist(allPoints[i].x, allPoints[i].y, allPoints[j].x, allPoints[j].y);
+ 
+        if (distBalls <= threshold) {
+          float lineWeight = threshold/distBalls/2;
+          //stroke(25,205,120);
+		  stroke(255,255,220);
+		  
+          strokeWeight(lineWeight);
+
+          line(allPoints[i].x, allPoints[i].y, allPoints[j].x, allPoints[j].y);
+        }
+      }
+    }
+  }
+}
+
+void mouseMoved() {// reset on mouse press
+  /*for (int i = 0; i < ballAmount; i++) {
+    float distance = dist(allPoints[i].x, allPoints[i].y, mouseX,mouseY);
+    if(distance>-threshold && distance<threshold) {
+      allPoints[i].setInc();
+    }
+  }*/
+}
+
+
+
+// Point Class
+class Point {
+  float x;float y;
+  float incX;float incY;
+ 
+  void setup() {
+    x = random(window.innerWidth);
+    y = random(window.innerHeight);
+    setInc();
+  }
+ 
+  //speed
+  void setInc() {
+    incX = random(-2, 2);
+    incY = random(-3, 3);
+  }
+ 
+  //the ball
+  void drawBall() {
+    //noStroke();
+    //ellipse(x, y, radius, radius);
+  }
+ 
+  //direction
+  void step() {
+    if (x > window.innerWidth || x < 0) {
+      incX = -incX;
+    }
+    if (y > window.innerHeight || y < 0) {
+      incY = -incY;
+    }
+    x += incX; y += incY;
+ 
+    if (x > window.innerWidth) {
+      x = window.innerWidth;
+      setInc();
+    }
+    if (x < 0) {
+      x = 0;
+      setInc();
+    }
+    if (y > window.innerHeight) {
+      y = window.innerHeight;
+      setInc();
+    }
+    if (y < 0) {
+      y = 0;
+      setInc();
+    }
+  }
+}
+
+window.onresize = function(event) {
+	size(window.innerWidth, window.innerHeight);
+}

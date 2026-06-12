@@ -1,0 +1,33 @@
+{
+    "name": "hamzeen-portfolio",
+    "version": "1.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "next dev",
+        "prebuild": "tsx scripts/generate-search-index.ts",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint"
+    },
+    "dependencies": {
+        "@shikijs/rehype": "latest",
+        "gray-matter": "latest",
+        "next": "latest",
+        "react": "latest",
+        "react-dom": "latest",
+        "rehype-slug": "latest",
+        "rehype-stringify": "latest",
+        "remark-gfm": "latest",
+        "remark-parse": "latest",
+        "remark-rehype": "latest",
+        "unified": "latest"
+    },
+    "devDependencies": {
+        "@types/node": "latest",
+        "@types/react": "latest",
+        "@types/react-dom": "latest",
+        "tsx": "latest",
+        "typescript": "latest"
+    }
+}

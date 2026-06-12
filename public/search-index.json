@@ -1,0 +1,123 @@
+[
+  {
+    "type": "page",
+    "title": "Home",
+    "url": "/",
+    "summary": "Portfolio, architecture, engineering leadership, photography and selected work.",
+    "keywords": [
+      "portfolio",
+      "system design",
+      "frontend architecture",
+      "micro frontends",
+      "devops"
+    ]
+  },
+  {
+    "type": "page",
+    "title": "About",
+    "url": "/about",
+    "summary": "Technical Lead profile, specializations, architecture principles and background.",
+    "keywords": [
+      "about",
+      "technical lead",
+      "architecture",
+      "clean code",
+      "user experience"
+    ]
+  },
+  {
+    "type": "page",
+    "title": "Contact",
+    "url": "/contact",
+    "summary": "Contact Hamzeen for engineering, architecture and collaboration.",
+    "keywords": [
+      "contact",
+      "collaboration",
+      "software engineering"
+    ]
+  },
+  {
+    "type": "blog",
+    "title": "Build an Aggregate Search Using Strategy Pattern",
+    "url": "/blog/aggregate-search-strategy-pattern",
+    "summary": "Applying the strategy pattern to combine multiple search providers behind a clean and extensible interface.",
+    "keywords": [
+      "Strategy Pattern",
+      "Search",
+      "TypeScript",
+      "Design Patterns"
+    ],
+    "date": "2025-10-18"
+  },
+  {
+    "type": "blog",
+    "title": "Event-Driven Backend with SSE in Node.js",
+    "url": "/blog/event-driven-backend-sse-nodejs",
+    "summary": "Designing a queue-based Node.js backend with image processing workers and real-time client notifications using Server-Sent Events.",
+    "keywords": [
+      "Node.js",
+      "SSE",
+      "BullMQ",
+      "Redis",
+      "Worker Threads",
+      "Sharp",
+      "Backend Architecture"
+    ],
+    "date": "2026-06-11"
+  },
+  {
+    "type": "blog",
+    "title": "A Beginner’s Guide to Java Native Interface",
+    "url": "/blog/java-native-interface",
+    "summary": "Understanding how Java can call native code through JNI and where this bridge is useful.",
+    "keywords": [
+      "Java",
+      "JNI",
+      "Native Code",
+      "JVM"
+    ],
+    "date": "2025-12-20"
+  },
+  {
+    "type": "blog",
+    "title": "The Holy Grail of JavaScript Templating Engines",
+    "url": "/blog/javascript-templating-engines",
+    "summary": "A short exploration of templating trade-offs in JavaScript applications.",
+    "keywords": [
+      "JavaScript",
+      "Templating",
+      "Frontend Architecture",
+      "UI Rendering"
+    ],
+    "date": "2025-09-12"
+  },
+  {
+    "type": "blog",
+    "title": "Micro Frontends for Scaling Software Teams",
+    "url": "/blog/micro-frontends",
+    "summary": "A practical look at micro frontends, team boundaries, deployment independence and architectural trade-offs.",
+    "keywords": [
+      "Micro Frontends",
+      "Frontend Architecture",
+      "Angular",
+      "React",
+      "Module Federation",
+      "Software Teams"
+    ],
+    "date": "2026-06-09"
+  },
+  {
+    "type": "blog",
+    "title": "Scalable Backends with Repository Pattern",
+    "url": "/blog/repository-pattern-scalable-backend",
+    "summary": "Using the repository pattern to isolate data access, improve testability and keep business logic independent from persistence details.",
+    "keywords": [
+      "Repository Pattern",
+      "Node.js",
+      "TypeScript",
+      "Backend Architecture",
+      "Clean Architecture"
+    ],
+    "date": "2026-06-10"
+  }
+]

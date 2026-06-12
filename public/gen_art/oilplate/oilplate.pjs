@@ -1,0 +1,42 @@
+/**
+ * 'Oil Plate' a generative art sketch inspired by, 
+ * http://amnonp5.wordpress.com/2012/06/17/playing-with-glsl-in-processing/
+ * http://www.openprocessing.org/sketch/4124
+ * 
+ * @author Hamzeen. H.
+ * @created 04 June, 2013
+ */
+float j,k,l;
+
+void setup(){
+  size(window.innerWidth, window.innerHeight);
+  colorMode(HSB);
+}
+
+void draw(){
+  int x,y;
+  l+=.006;j=0;
+  
+  //if(frameCount%2==0){
+  for(x=0;x<window.innerWidth;x+=2){
+    j+=.004;k=0;
+    for(y=0;y<window.innerHeight;y+=2){
+      k+=.004;
+      float a=noise(j,k,l)*50;
+      float b=noise(a,l)*250;
+      
+      color m=color(a,255,b);
+
+      set(x,y,m);
+      set(x+1,y,m);
+      
+      set(x,y+1,m);
+      set(x+1,y+1,m);
+    }
+  }
+  //}
+}
+
+window.onresize = function(event) {
+	size(window.innerWidth, window.innerHeight);
+}

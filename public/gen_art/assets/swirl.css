@@ -1,0 +1,155 @@
+
+/*-----------------------Contact Form-----------*/
+.message {
+font-size: 13px;
+padding: 0px 0px 0px 20px;
+text-align: center;
+width: 376px;
+color: #130E08;
+text-shadow: 0 1px 1px #7F6537;
+}
+form .submit {
+	float: right;
+}
+form p {margin-bottom: 5px;text-align: left;color: #C0D0D0;}
+
+form {
+	margin-left: 8px;
+	padding: 26px 24px 18px;
+	font-weight: normal;
+}
+
+/*import for form inputs fields*/
+form .input {
+	width: 97%;
+	padding: 3px;
+	margin-top: 2px;
+	margin-right: 6px;
+	margin-bottom: 16px;
+	border: 1px solid #E5E5E5;
+	outline: none;
+
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	
+	-moz-box-shadow: inset 0px 0px 2px rgba(200,200,200,0.2);
+	-webkit-box-shadow: inset 0px 0px 2px rgba(200,200,200,0.2);
+	box-shadow: inset 0px 0px 2px rgba(200,200,200,0.2);
+
+	-webkit-transition: -webkit-box-shadow 0.2s ease-out;
+	-moz-transition: -moz-box-shadow 0.2s ease-out;
+	-o-transition: box-shadow 0.2s ease-out;
+}
+
+form .input:hover, form .input:focus{
+-moz-box-shadow: inset 0px 0px 6px rgba(220,220,220,0.4);
+-webkit-box-shadow: inset 0px 0px 6px rgba(220,220,220,0.4);
+box-shadow: inset 0px 0px 6px rgba(220,220,220,0.4);
+
+-webkit-transition: -webkit-box-shadow 0.3s ease-in;
+-moz-transition: -moz-box-shadow 0.3s ease-in;
+-o-transition: box-shadow 0.3s ease-in;
+}
+
+.button{
+	cursor: pointer;
+	display: block;
+	text-shadow: rgba(0, 0, 0, 0.3) 0 -1px 0;
+
+	padding: 10px 40px;
+	border: 1px solid rgba(0, 0, 0, 0);
+	color: #999;
+	background: rgba(0,0,0, 0.1) repeat-x scroll left top;
+	box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), inset 0px 10px 30px rgba(255, 255, 255, 0.3);
+
+	-moz-border-radius: 4px;
+	-khtml-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+
+	-webkit-transition: background 0.4s ease-in-out;
+	-moz-transition: background 0.4s ease-in-out;
+	-o-transition: background 0.4s ease-in-out;
+	-ms-transition: background 0.4s ease-in-out;
+	transition: background 0.4s ease-in-out;
+	
+	-webkit-transition: color 0.5s ease-in-out;
+	-moz-transition: color 0.5s ease-in-out;
+	-o-transition: color 0.5s ease-in-out;
+	-ms-transition: color 0.5s ease-in-out;
+	transition: color 0.5s ease-in-out;
+}
+
+.button:hover{
+	color: #ececec;
+	background: #6CA516 repeat-x scroll left top;
+	box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.3), 0px 1px 2px rgba(0, 0, 0, 0.5), inset 0px 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+/*-----------------------People-----------------*/
+.profile h2{
+	margin-left: 7px;
+	font-size: 1.3em;
+}
+
+
+#people img{
+
+	padding: 2%;
+	float: left;
+	vertical-align: top;
+	width: 190px;
+}
+.profile{
+margin-left: 2%;
+margin-top: 10px;
+float:left;
+width: 100%;
+height:auto;
+}
+/*-----------------------Clients----------------*/
+#clients{
+	width:940px;
+	margin: 30px auto;
+}
+#clients ul{
+	margin-top: 30px;
+}
+#logos li {
+    float: right;
+    margin-left: 5px;
+	overflow:hidden;
+}
+#logos li a {
+    position: relative;
+    color: #e1e1e1;
+    display: block;
+    padding: 0.1em;
+    padding-left: 0.3em; padding-right: 0.3em;
+}
+
+/*-----------------------Blog Posts----------------*/
+#recent-posts{
+	margin-top: 10px;
+	margin-bottom: 120px;
+}
+.rssBody ul, .rssRow {
+	margin-left: 0;
+	padding-left: 0;
+	list-style: none;
+}
+.rssBody ul li, .rssRow {
+	float: left;
+	width: 30%;
+	margin-left: 1%;
+	padding: 1%;
+	list-style: none;
+}
+.rssRow h4 { margin: 0; font-size: 1.4em; }
+#about a, .rssRow h4 a { color:#fff; text-decoration: none; }
+#about a:hover{color: chartreuse;}
+.rssRow div { color: #8ceeff; font-size: 0.9em;}
+#zazar { color: #fff; }
+

@@ -5,7 +5,7 @@
     "type": "module",
     "scripts": {
         "dev": "next dev",
-        "prebuild": "tsx scripts/generate-search-index.ts",
+        "prebuild": "tsx scripts/generate-search-index.ts && tsx scripts/generate-sitemap.ts",
         "build": "next build",
         "start": "next start",
         "lint": "next lint"

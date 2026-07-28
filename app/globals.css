@@ -257,7 +257,6 @@ h3 {
     padding: 7px 9px;
 }
 
-
 .tag-row a:hover,
 .keyword-panel a:hover {
     border-color: rgba(24, 200, 232, 0.72);
@@ -394,11 +393,24 @@ h3 {
     display: inline-block;
     margin-bottom: 34px;
 }
-.article-header {
+/*.article-header {
+    border-bottom: 3px solid var(--gold);
     margin-bottom: 44px;
     padding-bottom: 34px;
-    border-bottom: 1px solid var(--faint);
+}*/
+.article-header {
+    margin-bottom: 44px;
 }
+
+.article-header::after {
+    content: "";
+    display: block;
+    width: 13%;
+    height: 3px;
+    margin-top: 34px;
+    background: var(--gold);
+}
+
 .article-header h1 {
     font-size: clamp(2.4rem, 6vw, 5rem);
     letter-spacing: -0.065em;

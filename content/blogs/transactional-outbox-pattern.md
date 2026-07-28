@@ -1,11 +1,12 @@
 ---
-title: "Transactional Outbox Pattern for Reliable Event-Driven Backends"
+title: "Transactional Outbox and the Dual-Write Problem"
 slug: "transactional-outbox-pattern"
 date: "2026-07-02"
 author: "Hamzeen Hameem"
-summary: "A practical look at using the transactional outbox pattern to reliably publish events after database changes in distributed backends."
+summary: "The transactional outbox pattern solves the dual-write problem and enables reliable event publishing in distributed backends."
 keywords:
     - Transactional Outbox
+    - Dual-Write Problem
     - Event-Driven Architecture
     - Distributed Systems
     - Message Brokers
@@ -14,92 +15,101 @@ keywords:
     - Microservices
 ---
 
-# Transactional Outbox Pattern: A Practical Way to Publish Reliable Events
+In a distributed system, a database change often needs to be communicated reliably to other services.
 
-In distributed backends, one common problem is this:
+For example, after a banking service posts a transfer, other services may need to send a notification, update a statement, perform fraud analysis, or feed the transaction into reporting systems.
 
-> A service writes something important to its database, and another service needs to react to it.
-
-For example:
-
-## Real-world examples
-
-### 1. Order placed → Payment / Inventory / Notification
-
-When an order is created, the Order Service writes:
+These workflows depend on events such as `TRANSFER_POSTED`.
 
 ```txt
-orders table
-outbox_events table: ORDER_PLACED
+Transfer Service
+      |
+      | TRANSFER_POSTED
+      v
+Message Broker
+      |
+      +--> Notification Service
+      +--> Statement Service
+      +--> Fraud Service
+      +--> Analytics Service
 ```
 
-Then other services consume the event:
+The event must be published reliably. If the transfer is committed but the event is lost, the source database contains the correct state while downstream systems remain unaware of it.
+
+## The dual-write problem
+
+A service may try to perform two independent writes:
 
 ```txt
-Order Service → Payment Service
-Order Service → Inventory Service
-Order Service → Notification Service
+1. Commit the business change to its database
+2. Publish an event to a message broker
 ```
 
----
+This creates the **dual-write problem** because the database and message broker do not normally share the same local transaction.
 
-### 2. User registered → Welcome email / onboarding
-
-When a new user signs up, the User Service writes:
+If the database commit succeeds but event publishing fails, the business change exists without its event. Publishing the event first is also unsafe because downstream services could receive an event for a database transaction that later fails.
 
 ```txt
-users table
-outbox_events table: USER_REGISTERED
+Database commit succeeds
+        |
+        X  Service crashes
+        |
+Event is never published
 ```
 
-Then downstream services react:
+In-memory retries alone do not remove this risk. If the service crashes after committing the database transaction but before recording or publishing the event, there may be nothing durable to retry.
+
+## The transactional outbox pattern
+
+The transactional outbox pattern solves the dual-write problem by atomically committing the database state change and a durable record of the event.
+
+Instead of publishing directly to the message broker, the service writes the event to an outbox table in the same database transaction as the business data.
 
 ```txt
-User Service → Email Service
-User Service → CRM Service
-User Service → Analytics Service
+Single database transaction
+    |
+    +--> Update business data
+    |
+    +--> Insert outbox event
+    |
+    v
+Commit together
 ```
 
----
+Both database operations now succeed or fail together.
 
-### 3. Image batch completed → Email confirmation
-
-When an image upload API receives and processes a batch of images, it writes:
+A separate process, commonly called an **outbox worker**, **message relay**, or **publisher**, later reads pending events from the outbox table and publishes them to the message broker.
 
 ```txt
-image_batches table
-images table
-outbox_events table: IMAGE_BATCH_COMPLETED
+Business transaction
+        ↓
+Business tables + Outbox table → Outbox worker → Message broker → Downstream services
 ```
 
-Then the Email Service sends a confirmation email to the user.
+The important distinction is that the pattern does **not** make the database update and broker publication one atomic operation. It makes the business change and the creation of a durable event record atomic. The event is then published asynchronously and can be retried until it succeeds.
 
-```txt
-Upload Service → Email Service
-Upload Service → Moderation Service
-Upload Service → Notification Service
-```
+## Applying the Outbox Pattern to a Bank Transfer
 
----
+Imagine a customer transfers **$100.00** from Account A to Account B.
 
-## Banking-style example
+The Transfer Service must:
 
-Imagine a user transfers money from Account A to Account B.
+1. Update the account balances.
+2. Create a ledger entry.
+3. Publish a `TRANSFER_POSTED` event.
 
-The backend must update balances, create a ledger entry, and notify other systems that the transfer was posted.
-
-Instead of updating the database and separately publishing an event, we write both the business data and the outbox event in the same transaction.
+The account updates, ledger entry, and outbox event are committed in one database transaction:
 
 ```sql
 BEGIN;
 
 UPDATE accounts
-SET balance = balance - 10000
+SET balance = balance - 100.00
 WHERE id = 'account_A'
-  AND balance >= 10000;
+  AND balance >= 100.00;
 
 UPDATE accounts
-SET balance = balance + 10000
+SET balance = balance + 100.00
 WHERE id = 'account_B';
 
 INSERT INTO ledger_entries (
@@ -107,27 +117,40 @@ INSERT INTO ledger_entries (
   debit_account_id,
   credit_account_id,
   amount,
+  currency,
   status
 )
 VALUES (
   'transfer_123',
   'account_A',
   'account_B',
-  10000,
+  100.00,
+  'USD',
   'POSTED'
 );
 
 INSERT INTO outbox_events (
+  id,
   event_type,
+  aggregate_type,
   aggregate_id,
   payload,
   status,
   created_at
 )
 VALUES (
+  'event_456',
   'TRANSFER_POSTED',
+  'TRANSFER',
   'transfer_123',
-  '{"from":"account_A","to":"account_B","amount":10000}',
+  jsonb_build_object(
+    'eventId', 'event_456',
+    'transferId', 'transfer_123',
+    'fromAccountId', 'account_A',
+    'toAccountId', 'account_B',
+    'amount', 100.00,
+    'currency', 'USD'
+  ),
   'PENDING',
   now()
 );
@@ -135,59 +158,50 @@ VALUES (
 COMMIT;
 ```
 
-Now the database has committed both:
+Now the database has committed both the posted transfer and its outbox event.
+
+### ledger_entries
+
+| transfer_id  | debit_account_id | credit_account_id | amount | currency | status |
+| ------------ | ---------------- | ----------------- | ------ | -------- | ------ |
+| transfer_123 | account_A        | account_B         | 100.00 | USD      | POSTED |
+
+### outbox_events
+
+| id        | event_type      | aggregate_type | aggregate_id | status  | created_at              |
+| --------- | --------------- | -------------- | ------------ | ------- | ----------------------- |
+| event_456 | TRANSFER_POSTED | TRANSFER       | transfer_123 | PENDING | 2026-07-02 10:42:18 UTC |
+
+The outbox worker then processes the event:
 
 ```txt
-ledger_entries table → transfer_123 was posted
-outbox_events table → TRANSFER_POSTED is waiting to be published
+1. Read the pending outbox event
+2. Publish TRANSFER_POSTED to the message broker
+3. Receive acknowledgement from the broker
+4. Mark the outbox event as processed
 ```
 
-After that, an outbox worker can pick the pending event and publish it to a broker such as Kafka, RabbitMQ, Redis Streams, or another messaging system.
+If the broker is unavailable, the transfer remains safely committed and the event remains available for a later retry.
 
-Then other services can react:
+A worker can also fail after publishing an event but before marking it as processed. The event may then be published again. For this reason, outbox-based systems commonly provide **at-least-once delivery**, and downstream consumers should handle duplicate events idempotently using the event ID.
 
-```txt
-TRANSFER_POSTED
-→ Notification Service sends SMS/email
-→ Statement Service updates transaction history
-→ Fraud Service reviews the transaction
-→ Analytics Service updates reporting
-```
+## Where else is it useful?
 
-## Simple timeline
+The same pattern can be used when:
 
-```txt
-1. API receives request
-2. Service writes business data
-3. Service writes outbox event in the same DB transaction
-4. Transaction commits
-5. Outbox worker reads pending events
-6. Worker publishes event to message broker
-7. Consumer services process the event
-8. Event is marked as processed
-```
-
-## Why not just publish directly?
-
-Without outbox, this can happen:
-
-```txt
-Database update succeeds
-Event publish fails
-```
-
-Now the system has changed state, but no other service knows about it.
-
-The transactional outbox pattern avoids this by making the event part of the same database transaction.
+- An order must trigger payment, inventory, or fulfilment workflows.
+- A successful payment must trigger receipt and accounting updates.
+- A user registration must trigger email, CRM, or onboarding workflows.
+- An inventory reservation must be propagated to other services.
+- A completed file-processing job must trigger notification or moderation.
+- An important business change must be delivered to audit or analytics systems.
 
 ## Conclusion
 
-Transactional outbox gives you **fire-and-forget style decoupling**, but with better reliability.
+Reliable event publishing is essential when downstream services depend on events to keep their data and workflows aligned.
 
-The service does not directly wait for Payment, Email, Inventory, or Notification services. It simply records a business event safely, and the event can be retried until it is processed.
+Directly updating a database and publishing to a broker creates a dual-write problem because a failure can occur between the two operations.
 
-A good rule of thumb:
+The transactional outbox pattern addresses this by atomically storing the business change and its event record in the same database transaction. A separate worker publishes the stored event afterward and retries when necessary.
 
-> Use transactional outbox when one service writes important data to its own database, and another service must reliably react to that change.
-
-It is ideal for orders, payments, user registration, image processing, emails, notifications, audit logs, and event-driven workflows where losing an event is not acceptable.
+> Use the transactional outbox pattern when a committed database change must reliably produce an event for another service.

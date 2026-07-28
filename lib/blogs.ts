@@ -24,7 +24,7 @@ export type BlogFrontmatter = {
 };
 
 // Average adult silent-reading speed. Used to estimate reading time from word count.
-const WORDS_PER_MINUTE = 180;
+const WORDS_PER_MINUTE = 165;
 
 /**
  * Estimates reading time (in whole minutes, minimum 1) from raw markdown body content.

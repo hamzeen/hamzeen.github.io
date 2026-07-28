@@ -393,15 +393,10 @@ h3 {
     display: inline-block;
     margin-bottom: 34px;
 }
-/*.article-header {
-    border-bottom: 3px solid var(--gold);
-    margin-bottom: 44px;
-    padding-bottom: 34px;
-}*/
+
 .article-header {
     margin-bottom: 44px;
 }
-
 .article-header::after {
     content: "";
     display: block;

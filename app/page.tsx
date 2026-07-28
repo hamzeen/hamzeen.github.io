@@ -55,7 +55,9 @@ export default async function HomePage() {
                 <div className="blog-grid two-col">
                     {blogs.slice(0, 6).map((post) => (
                         <Link className="blog-card" key={post.slug} href={`/blog/${post.slug}`}>
-                            <time>{post.date}</time>
+                            <time>
+                                {post.date} · {post.readingTime} min read
+                            </time>
                             <h3>{post.title}</h3>
                             <p>{post.summary}</p>
                             <div className="tag-row">

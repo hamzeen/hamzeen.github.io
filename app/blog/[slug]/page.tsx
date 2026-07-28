@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { getAllBlogs, getBlogBySlug, slugifyKeyword } from '@/lib/blogs';
+import Image from 'next/image';
+import { getAllBlogs, getAuthorImagePath, getBlogBySlug, slugifyKeyword } from '@/lib/blogs';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -35,8 +36,23 @@ export default async function BlogDetailPage({ params }: Props) {
       <Link href="/blog" className="text-link back-link">← Back to blog</Link>
       <article>
         <header className="article-header">
-          <p className="eyebrow">{post.date}</p>
           <h1>{post.title}</h1>
+          <div className="author-meta">
+            <Image
+              src={getAuthorImagePath(post.author)}
+              alt={post.author}
+              width={44}
+              height={44}
+              className="author-avatar"
+            />
+            <p className="author-meta-text">
+              <span className="author-name">{post.author}</span>
+              <span aria-hidden="true"> · </span>
+              <span>{post.readingTime} min read</span>
+              <span aria-hidden="true"> · </span>
+              <span>{post.date}</span>
+            </p>
+          </div>
           <p>{post.summary}</p>
           <div className="tag-row">
             {post.keywords.map((keyword) => (

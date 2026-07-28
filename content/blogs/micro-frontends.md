@@ -2,6 +2,7 @@
 title: "Micro Frontends for Scaling Software Teams"
 slug: "micro-frontends"
 date: "2026-06-09"
+author: "Hamzeen Hameem"
 summary: "A practical look at micro frontends, team boundaries, deployment independence and architectural trade-offs."
 keywords:
   - Micro Frontends

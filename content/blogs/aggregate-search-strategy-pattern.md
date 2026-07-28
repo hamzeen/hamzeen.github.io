@@ -2,6 +2,7 @@
 title: "Build an Aggregate Search Using Strategy Pattern"
 slug: "aggregate-search-strategy-pattern"
 date: "2025-10-18"
+author: "Hamzeen Hameem"
 summary: "Applying the strategy pattern to combine multiple search providers behind a clean and extensible interface."
 keywords:
   - Strategy Pattern

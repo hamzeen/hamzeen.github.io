@@ -2,6 +2,7 @@
 title: "Event-Driven Backend with SSE in Node.js"
 slug: "event-driven-backend-sse-nodejs"
 date: "2026-06-11"
+author: "Hamzeen Hameem"
 summary: "Designing a queue-based Node.js backend with image processing workers and real-time client notifications using Server-Sent Events."
 keywords:
   - Node.js

@@ -415,6 +415,28 @@ h3 {
     font-size: 1.12rem;
     max-width: 760px;
 }
+.author-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+}
+.author-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.author-meta-text {
+    color: var(--muted);
+    font-size: 1rem;
+    max-width: none;
+}
+.author-meta-text .author-name {
+    color: rgba(255, 255, 255, 0.92);
+    font-weight: 600;
+}
 .article-content {
     color: rgba(255, 255, 255, 0.88);
 }

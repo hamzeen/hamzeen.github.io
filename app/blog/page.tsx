@@ -31,7 +31,9 @@ export default async function BlogPage() {
       <section className="blog-grid">
         {posts.map((post) => (
           <Link className="blog-card" key={post.slug} href={`/blog/${post.slug}`}>
-            <time>{post.date}</time>
+            <time>
+              {post.date} · {post.readingTime} min read
+            </time>
             <h2>{post.title}</h2>
             <p>{post.summary}</p>
             <div className="tag-row">

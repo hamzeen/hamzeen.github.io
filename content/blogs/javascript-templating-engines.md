@@ -2,6 +2,7 @@
 title: "The Holy Grail of JavaScript Templating Engines"
 slug: "javascript-templating-engines"
 date: "2025-09-12"
+author: "Hamzeen Hameem"
 summary: "A short exploration of templating trade-offs in JavaScript applications."
 keywords:
   - JavaScript

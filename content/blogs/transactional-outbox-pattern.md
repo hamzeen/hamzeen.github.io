@@ -2,6 +2,7 @@
 title: "Transactional Outbox Pattern for Reliable Event-Driven Backends"
 slug: "transactional-outbox-pattern"
 date: "2026-07-02"
+author: "Hamzeen Hameem"
 summary: "A practical look at using the transactional outbox pattern to reliably publish events after database changes in distributed backends."
 keywords:
     - Transactional Outbox

@@ -2,6 +2,7 @@
 title: "Scalable Backends with Repository Pattern"
 slug: "repository-pattern-scalable-backend"
 date: "2026-06-10"
+author: "Hamzeen Hameem"
 summary: "Using the repository pattern to isolate data access, improve testability and keep business logic independent from persistence details."
 keywords:
   - Repository Pattern

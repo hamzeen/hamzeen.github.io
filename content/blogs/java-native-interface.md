@@ -2,6 +2,7 @@
 title: "A Beginner’s Guide to Java Native Interface"
 slug: "java-native-interface"
 date: "2025-12-20"
+author: "Hamzeen Hameem"
 summary: "Understanding how Java can call native code through JNI and where this bridge is useful."
 keywords:
   - Java

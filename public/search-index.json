@@ -117,6 +117,28 @@
   },
   {
     "type": "topic",
+    "title": "Distributed Systems",
+    "url": "/topics/distributed-systems",
+    "summary": "Browse posts about Distributed Systems.",
+    "keywords": [
+      "Distributed Systems",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "Event-Driven Architecture",
+    "url": "/topics/event-driven-architecture",
+    "summary": "Browse posts about Event-Driven Architecture.",
+    "keywords": [
+      "Event-Driven Architecture",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
     "title": "Frontend Architecture",
     "url": "/topics/frontend-architecture",
     "summary": "Browse posts about Frontend Architecture.",
@@ -172,11 +194,33 @@
   },
   {
     "type": "topic",
+    "title": "Message Brokers",
+    "url": "/topics/message-brokers",
+    "summary": "Browse posts about Message Brokers.",
+    "keywords": [
+      "Message Brokers",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
     "title": "Micro Frontends",
     "url": "/topics/micro-frontends",
     "summary": "Browse posts about Micro Frontends.",
     "keywords": [
       "Micro Frontends",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "Microservices",
+    "url": "/topics/microservices",
+    "summary": "Browse posts about Microservices.",
+    "keywords": [
+      "Microservices",
       "topic",
       "blog"
     ]
@@ -232,6 +276,17 @@
     "summary": "Browse posts about Redis.",
     "keywords": [
       "Redis",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "Reliability",
+    "url": "/topics/reliability",
+    "summary": "Browse posts about Reliability.",
+    "keywords": [
+      "Reliability",
       "topic",
       "blog"
     ]
@@ -309,6 +364,17 @@
     "summary": "Browse posts about Templating.",
     "keywords": [
       "Templating",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
+    "title": "Transactional Outbox",
+    "url": "/topics/transactional-outbox",
+    "summary": "Browse posts about Transactional Outbox.",
+    "keywords": [
+      "Transactional Outbox",
       "topic",
       "blog"
     ]
@@ -429,5 +495,21 @@
       "Clean Architecture"
     ],
     "date": "2026-06-10"
+  },
+  {
+    "type": "blog",
+    "title": "Transactional Outbox Pattern for Reliable Event-Driven Backends",
+    "url": "/blog/transactional-outbox-pattern",
+    "summary": "A practical look at using the transactional outbox pattern to reliably publish events after database changes in distributed backends.",
+    "keywords": [
+      "Transactional Outbox",
+      "Event-Driven Architecture",
+      "Distributed Systems",
+      "Message Brokers",
+      "Backend Architecture",
+      "Reliability",
+      "Microservices"
+    ],
+    "date": "2026-07-02"
   }
 ]

@@ -19,7 +19,14 @@ export default function AboutPage() {
                 </p>
                 <p>
                     He is hands-on across Node.js, TypeScript, Java, Spring Boot, Angular, React and
-                    Vue, with 15+ years of industry experience.
+                    Vue, with 15+ years of industry experience. Available for hire through{" "}
+                    <a
+                        className="capsule"
+                        href="https://www.toptal.com/developers/resume/hamzeen-hameem"
+                        target="_blank">
+                        Toptal
+                    </a>
+                    .
                 </p>
                 <p>
                     Hamzeen graduated from the University of Westminster, London, with a BSc (Hons)

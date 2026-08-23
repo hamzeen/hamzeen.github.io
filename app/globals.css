@@ -50,6 +50,21 @@ td {
     border: 1px solid var(--faint);
 }
 
+.capsule {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 15px;
+    background: #c89b3c;
+    color: #fff;
+    text-decoration: none;
+    line-height: 1.4;
+    transition: opacity 0.2s ease;
+}
+
+.capsule:hover {
+    opacity: 0.85;
+}
+
 .container {
     width: min(var(--max-width), calc(100% - 48px));
     margin-inline: auto;

@@ -91,6 +91,10 @@ td {
     font-weight: 400;
     letter-spacing: -0.02em;
 }
+.brand-logo {
+    width: 130px;
+    height: auto;
+}
 .nav-links {
     display: flex;
     gap: 22px;

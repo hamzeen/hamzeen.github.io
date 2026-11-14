@@ -128,6 +128,17 @@
   },
   {
     "type": "topic",
+    "title": "Dual-Write Problem",
+    "url": "/topics/dual-write-problem",
+    "summary": "Browse posts about Dual-Write Problem.",
+    "keywords": [
+      "Dual-Write Problem",
+      "topic",
+      "blog"
+    ]
+  },
+  {
+    "type": "topic",
     "title": "Event-Driven Architecture",
     "url": "/topics/event-driven-architecture",
     "summary": "Browse posts about Event-Driven Architecture.",
@@ -429,7 +440,7 @@
     "type": "blog",
     "title": "Event-Driven Backend with SSE in Node.js",
     "url": "/blog/event-driven-backend-sse-nodejs",
-    "summary": "Designing a queue-based Node.js backend with image processing workers and real-time client notifications using Server-Sent Events.",
+    "summary": "Designing a queue-based Node.js backend with image-processing workers and real-time client notifications using Server-Sent Events.",
     "keywords": [
       "Node.js",
       "SSE",
@@ -439,7 +450,7 @@
       "Sharp",
       "Backend Architecture"
     ],
-    "date": "2026-06-11"
+    "date": "2026-05-19"
   },
   {
     "type": "blog",
@@ -498,11 +509,12 @@
   },
   {
     "type": "blog",
-    "title": "Transactional Outbox Pattern for Reliable Event-Driven Backends",
+    "title": "Transactional Outbox and the Dual-Write Problem",
     "url": "/blog/transactional-outbox-pattern",
-    "summary": "A practical look at using the transactional outbox pattern to reliably publish events after database changes in distributed backends.",
+    "summary": "The transactional outbox pattern solves the dual-write problem and enables reliable event publishing in distributed backends.",
     "keywords": [
       "Transactional Outbox",
+      "Dual-Write Problem",
       "Event-Driven Architecture",
       "Distributed Systems",
       "Message Brokers",

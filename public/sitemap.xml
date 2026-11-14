@@ -3,49 +3,43 @@
 
   <url>
     <loc>https://hamzeen.github.io/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/about</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/contact</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/blog</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/search</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/blog/transactional-outbox-pattern</loc>
     <lastmod>2026-07-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://hamzeen.github.io/blog/event-driven-backend-sse-nodejs</loc>
-    <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -58,6 +52,12 @@
   <url>
     <loc>https://hamzeen.github.io/blog/micro-frontends</loc>
     <lastmod>2026-06-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://hamzeen.github.io/blog/event-driven-backend-sse-nodejs</loc>
+    <lastmod>2026-05-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -81,193 +81,199 @@
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/angular</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/backend-architecture</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/bullmq</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/clean-architecture</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/design-patterns</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/distributed-systems</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://hamzeen.github.io/topics/dual-write-problem</loc>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/event-driven-architecture</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/frontend-architecture</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/java</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/javascript</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/jni</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/jvm</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/message-brokers</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/micro-frontends</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/microservices</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/module-federation</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/native-code</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/nodejs</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/react</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/redis</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/reliability</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/repository-pattern</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/search</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/sharp</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/software-teams</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/sse</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/strategy-pattern</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/templating</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/transactional-outbox</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/typescript</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/ui-rendering</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://hamzeen.github.io/topics/worker-threads</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-11-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

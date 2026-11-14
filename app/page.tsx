@@ -82,8 +82,8 @@ export default async function HomePage() {
             </section>*/}
             <section className="container section-space">
                 <div className="section-heading">
-                    <p className="eyebrow">Capabilities</p>
-                    <h2>Engineering focus</h2>
+                    <p className="eyebrow">Engineering</p>
+                    <h2>Specializations</h2>
                 </div>
                 <div className="skill-grid">
                     {skills.map((skill, index) => (

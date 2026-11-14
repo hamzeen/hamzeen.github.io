@@ -22,7 +22,7 @@ export default async function HomePage() {
                 <img src="/images/hamzeen-2025.jpg" alt="skiing" />
 
                 <div className="copy-block">
-                    <p>Hi There!</p>
+                    <p className="greeting">Hi There!</p>
                     <p>
                         My name is Hamzeen, and I'm a full stack engineer with a passion for
                         building scalable web applications with clean code and thoughtful user
@@ -53,8 +53,11 @@ export default async function HomePage() {
                     </Link>
                 </div>
                 <div className="blog-grid two-col">
-                    {blogs.slice(0, 6).map((post) => (
-                        <Link className="blog-card" key={post.slug} href={`/blog/${post.slug}`}>
+                    {blogs.slice(0, 3).map((post, index) => (
+                        <Link
+                            className={`blog-card${index === 0 ? " blog-card-featured" : ""}`}
+                            key={post.slug}
+                            href={`/blog/${post.slug}`}>
                             <time>
                                 {post.date} · {post.readingTime} min read
                             </time>

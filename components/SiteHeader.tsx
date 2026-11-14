@@ -1,13 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import ActiveNavLinks from "./ActiveNavLinks";
 import SearchBox from "./SearchBox";
-
-const links = [
-    { href: "/", label: "Portfolio" },
-    { href: "/blog", label: "Blog" },
-    { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
-];
 
 export default function SiteHeader() {
     return (
@@ -22,13 +16,7 @@ export default function SiteHeader() {
                         className="brand-logo"
                     />
                 </Link>
-                <nav className="nav-links" aria-label="Main navigation">
-                    {links.map((link) => (
-                        <Link key={link.href} href={link.href}>
-                            {link.label}
-                        </Link>
-                    ))}
-                </nav>
+                <ActiveNavLinks />
                 <SearchBox variant="compact" />
             </div>
         </header>
